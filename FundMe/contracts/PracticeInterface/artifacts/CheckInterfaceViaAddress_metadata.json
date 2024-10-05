@@ -1,0 +1,67 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "latestRoundData",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"FundMe/contracts/PracticeInterface/CheckInterfaceViaAddress.sol": "CheckInterfaceViaAddress"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"FundMe/contracts/PracticeInterface/AggregatorInterface.sol": {
+			"keccak256": "0xc7a1a1266eb6fb5f6c8819da77849a4c5f0b9c39f3ff8df1528c74a2b0dfdde9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7d5c1444ad01070e7df0e3c46c05d6d5a226e631ce8b641d4c751183acbc3714",
+				"dweb:/ipfs/Qmc7aXkGf3f9RUnWAeEargqbvWiyUSvtfxjvetSqE6Sp67"
+			]
+		},
+		"FundMe/contracts/PracticeInterface/CheckInterfaceViaAddress.sol": {
+			"keccak256": "0x55c5a8dd155a20e3b53f1cc498a95ab8f1741e154eb46ac8b2301d585fb65db6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ed661878c80b5b66d358022b6223d32c4ea4ce414b5cae7d258b2587dffff38f",
+				"dweb:/ipfs/QmY9obFDDo2rLmphrwXij7JAr241NLYYDZDswMUMgSxBK6"
+			]
+		}
+	},
+	"version": 1
+}
