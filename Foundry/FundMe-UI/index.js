@@ -37,7 +37,7 @@ async function connect() {
 async function updateWalletBalance(address) {
   const provider = new ethers.BrowserProvider(window.ethereum)
   const balance = await provider.getBalance(address)
-  walletBalance.innerHTML = `Wallet Balance: ${ethers.formatEther(balance)} ETH`
+  walletBalance.innerHTML = `Connected Wallet's Balance: ${ethers.formatEther(balance)} ETH`
 }
 
 async function withdraw() {
