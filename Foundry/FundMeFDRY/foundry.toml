@@ -7,4 +7,7 @@ remappings = [
   '@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/',
 ]
 
+# allows foundry to run bash scripts directly.
+ffi = true
+
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options

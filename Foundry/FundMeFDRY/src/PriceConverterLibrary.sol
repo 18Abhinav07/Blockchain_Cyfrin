@@ -10,43 +10,16 @@ library PriceConverter {
         return uint256(price * 1e10);
     }
 
-    function getConversionRate(
-        uint256 ethAmount,
+    function get_conversion_rate(
+        uint256 ETH_amount,
         address chain
     ) internal view returns (uint256) {
-        uint256 ethPrice = conversion_price(chain);
-        uint256 ethAmountInUsd = (ethAmount * ethPrice) / 1e18;
-        return ethAmountInUsd;
+        uint256 ETH_price = conversion_price(chain);
+        uint256 ETH_amount_in_USD = (ETH_amount * ETH_price) / 1e18;
+        return ETH_amount_in_USD;
     }
 
-    function getVersion(address chain) internal view returns (uint256) {
+    function get_version(address chain) public view returns(uint256) {
         return AggregatorV3Interface(chain).version();
-    }
-
-    function getDecimals(address chain) internal view returns (uint8) {
-        return AggregatorV3Interface(chain).decimals();
-    }
-
-    function getDescription(
-        address chain
-    ) internal view returns (string memory) {
-        return AggregatorV3Interface(chain).description();
-    }
-
-    function getRoundData(
-        uint80 _roundId,
-        address chain
-    )
-        internal
-        view
-        returns (
-            uint80 roundId,
-            int256 answer,
-            uint256 startedAt,
-            uint256 updatedAt,
-            uint80 answeredInRound
-        )
-    {
-        return AggregatorV3Interface(chain).getRoundData(_roundId);
     }
 }
