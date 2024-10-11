@@ -1,6 +1,5 @@
-// export const zkSyncContractAddress = "0x4B5DF730c2e6b28E17013A1485E5d9BC41Efe021"
-// export const contractAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"
-export const contractAddress = "0xCE3478A9E0167a6Bc5716DC39DbbbfAc38F27623"
+
+export const contractAddress = "0x05474b77BE47d461bFC3F61189C526c0B3a09e06"
 export const abi = [
   {
     inputs: [
