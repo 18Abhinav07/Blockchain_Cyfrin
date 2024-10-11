@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
+import {console} from "forge-std/Script.sol";
 contract FunWithStorage {
     uint256 favoriteNumber; // Stored at slot 0
     bool someBool; // Stored at slot 1
@@ -26,6 +27,9 @@ contract FunWithStorage {
     function doStuff() public view {
         uint256 newVar = favoriteNumber + 1; // SLOAD
         bool otherVar = someBool; // SLOAD
-            // ^^ memory / stack variables
+        // ^^ memory / stack variables
+
+        console.log(newVar);
+        console.log(otherVar);
     }
 }
