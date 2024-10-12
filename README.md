@@ -1,3 +1,14 @@
+# Fund Me dApp
+
+This decentralized application allows users to fund my account with ETH on the Sepolia testnet.
+
+## How to Use
+
+1. Visit the dApp:
+   [Fund-Me-on-sepolia-testnet](https://fund-abhinav.vercel.app/)
+2. Connect your MetaMask wallet to the Sepolia testnet.
+3. Enter the amount of ETH you wish to send.
+4. Click the "Fund" button to send ETH to my account.
 
 # Project Overview
 
