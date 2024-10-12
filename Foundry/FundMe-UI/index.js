@@ -5,9 +5,11 @@ const connectButton = document.getElementById("connectButton")
 const withdrawButton = document.getElementById("withdrawButton")
 const fundButton = document.getElementById("fundButton")
 const balanceButton = document.getElementById("balanceButton")
+const fundersButton = document.getElementById("fundersButton")
 const accountInfo = document.getElementById("accountInfo")
 const walletBalance = document.getElementById("walletBalance")
 const contractBalance = document.getElementById("contractBalance")
+const fundersList = document.getElementById("fundersList")
 const transactionStatus = document.getElementById("transactionStatus")
 const errorMessage = document.getElementById("errorMessage")
 
@@ -15,6 +17,7 @@ connectButton.onclick = connect
 withdrawButton.onclick = withdraw
 fundButton.onclick = fund
 balanceButton.onclick = getBalance
+fundersButton.onclick = getFunders
 
 async function connect() {
   if (typeof window.ethereum !== "undefined") {
@@ -52,9 +55,6 @@ async function withdraw() {
     const signer_address = await signer.getAddress();
 
     try {
-      console.log("owner address", owner);
-      console.log("signer address", signer.getAddress());
-
       if (owner !== signer_address) {
         errorMessage.innerHTML = "You are not the owner of this contract. Cannot withdraw";
         return
@@ -115,5 +115,32 @@ async function getBalance() {
     }
   } else {
     balanceButton.innerHTML = "Please install MetaMask"
+  }
+}
+
+async function getFunders() {
+  fundersList.innerHTML = ""
+  if (typeof window.ethereum !== "undefined") {
+    const provider = new ethers.BrowserProvider(window.ethereum)
+    await provider.send("eth_requestAccounts", [])
+    const signer = await provider.getSigner()
+    const contract = new ethers.Contract(contractAddress, abi, signer)
+
+    try {
+      const funders = await contract.get_funders()
+
+      for (let funder of funders) {
+        const amount = await contract.get_funders_mapped_fundings(funder)
+        const formattedAmount = ethers.formatEther(amount)
+
+        const listItem = document.createElement("li")
+        listItem.innerText = `Funder: ${funder} - Funded: ${formattedAmount} ETH`
+        fundersList.appendChild(listItem)
+      }
+    } catch (error) {
+      errorMessage.innerHTML = `Error: ${error.message}`
+    }
+  } else {
+    fundersButton.innerHTML = "Please install MetaMask"
   }
 }

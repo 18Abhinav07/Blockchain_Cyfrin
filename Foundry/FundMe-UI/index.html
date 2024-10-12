@@ -47,7 +47,7 @@
     h1 {
       margin-bottom: 20px;
       color: #333;
-      font-family:'Times New Roman', Times, serif;
+      font-family: 'Times New Roman', Times, serif;
       font-weight: bold;
     }
 
@@ -104,6 +104,17 @@
       font-weight: bold;
       margin-top: 10px;
     }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 5px 0;
+      font-family: monospace;
+      color: #333;
+    }
   </style>
 </head>
 
@@ -116,8 +127,8 @@
   </video>
 
   <div class="container">
-    <h1>Abhinav's Payment D-App </h1>
-    <h2>Send me funds on sepolia testnet.</h2>
+    <h1>Abhinav's Payment D-App</h1>
+    <h2>Send me funds on Sepolia Testnet.</h2>
 
     <!-- Display Account Info -->
     <div id="accountInfo" class="result"></div>
@@ -127,35 +138,40 @@
 
     <div class="spacer"></div>
 
+    <!-- Input Amount of ETH -->
+    <label for="ethAmount">Amount to Fund (in ETH)</label>
+    <input id="ethAmount" placeholder="Enter ETH Amount" />
+
+    <!-- Fund Button -->
+    <button id="fundButton">Fund</button>
+
     <!-- Display Wallet Balance -->
     <div id="walletBalance" class="result"></div>
 
-    <!-- Balance Button -->
-    <button id="balanceButton">Check Contract Balance</button>
+    <!-- Withdraw Button -->
+    <button id="withdrawButton">Withdraw</button>
+
+    <!-- Get Contract Balance -->
+    <button id="balanceButton">Get Contract Balance</button>
+
+    <!-- Display Contract Balance -->
     <div id="contractBalance" class="result"></div>
 
-    <div class="spacer"></div>
+    <!-- Get Funders Button -->
+    <button id="fundersButton">Get All Funders and Fundings</button>
 
-    <!-- Withdraw Button -->
-    <button id="withdrawButton">Withdraw Funds</button>
+    <!-- Display Funders List -->
+    <ul id="fundersList"></ul>
 
-    <div class="spacer"></div>
-
-    <!-- Fund Section -->
-    <label for="ethAmount">ETH Amount</label>
-    <input id="ethAmount" placeholder="0.1 ETH" />
-
-    <div class="spacer"></div>
-
-    <!-- Fund Button -->
-    <button id="fundButton">Fund Contract</button>
-
-    <!-- Transaction Status -->
+    <!-- Display Transaction Status -->
     <div id="transactionStatus" class="result"></div>
+
+    <!-- Error Message -->
     <div id="errorMessage" class="error"></div>
   </div>
 
-  <script src="./index.js" type="module"></script>
+  <!-- Import JavaScript file -->
+  <script type="module" src="./index.js"></script>
 </body>
 
 </html>
